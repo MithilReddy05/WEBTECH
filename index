@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Interactive Quiz</title>
+    <link rel="stylesheet" href="style.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <div id="welcome-screen">
+        <h2>Welcome to the Quiz</h2>
+        <p>Enter your name to begin:</p>
+        <input type="text" id="username" placeholder="Your name"/>
+        <button id="start-button">Start Quiz</button>
+    </div>
+    <div id="subject-screen" class="hidden">
+        <h2>Select a Subject</h2>
+        <div id="subjects">
+            <button class="subject-btn" data-subject="os">Operating Systems</button>
+            <button class="subject-btn" data-subject="cd">Compiler Design</button>
+            <button class="subject-btn" data-subject="webtech">Web Technology</button>
+            <button class="subject-btn" data-subject="python">Python</button>
+        </div>
+    </div>
+    <div class="quiz-container hidden" id="quiz-container">
+
+        <div id="quiz-left">
+
+            <h1>Quiz</h1>
+            <div id="progress-bar-wrapper">
+                <div id="progress-bar">
+                    <span id="progress-text">0%</span>
+                </div>
+            </div>
+            <div id="quiz-box">
+                <div id="question-container">
+                    <div id="question"></div>
+                    <div id="options"></div>
+                </div>
+
+                <div id="progress"></div>
+                <div id="timer">Time Left: <span id="time">30</span>s</div>
+
+                <button id="next-button">Next</button>
+            </div>
+            <div id="result-box" class="hidden">
+                <h2 id="result-title"></h2>
+                <p id="score"></p>
+
+                <div id="review"></div>
+
+                <div id="chart-container">
+                    <canvas id="pieChart"></canvas>
+                    <canvas id="barChart"></canvas>
+                </div>
+
+                <button id="restart-button">Restart Quiz</button>
+            </div>
+
+        </div>
+        <div id="side-panel">
+            <div id="side-timer">
+                <h3> Time Left</h3>
+                <div id="big-time">30s</div>
+            </div>
+
+            <h3>Questions</h3>
+            <div id="question-nav"></div>
+
+            <button id="submit-btn">Submit Quiz</button>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
